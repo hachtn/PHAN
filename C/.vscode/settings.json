@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "iostream": "cpp"
+    },
+    "files.autoSave": "onWindowChange",
+    "C_Cpp.intelliSenseEngineFallback": "enabled"
+}
