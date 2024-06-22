@@ -1,5 +1,5 @@
 import sys
-file_path = 'test.txt'
+file_path = 'D:\\Documents\\GitHub\\PHAN\\Python\\test.txt'
     
 with open(file_path, 'r') as f:
     data = f.read().strip().split()
