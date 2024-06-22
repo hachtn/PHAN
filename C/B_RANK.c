@@ -167,61 +167,7 @@ int main(void){
       return 0;
 }
 ==========================================================================================
-//B129:n毛作
 
-#include <stdio.h>
-#define  MAX 50
-
-    // 自分の得意な言語で
-    // Let's チャレンジ！！
-void harvest(int farm[MAX][MAX],int crop[MAX],int a,int b,int c,int d)
-{
- int i,j;   
- for (i=a-1;i<b;i++)
-  {
-  for (j=c-1;j<d;j++)
-       crop[farm[i][j]]++;
-  }       
-  return;       
-      
-}
-void plant(int farm[MAX][MAX],int a,int b,int c,int d,int e)
-{
- int i,j;   
- for (i=a-1;i<b;i++)
-  {
-  for (j=c-1;j<d;j++)
-       farm[i][j]=e;
-  }       
-  return;       
-      
-}
-int main(void){
-    int farm[MAX][MAX]={0};
-    int i,j,n,m,h,w,a,b,c,d,e;
-    int crop[MAX]={0};
-    scanf("%d %d",&n,&m);
-    scanf("%d %d",&h,&w);
-    for (i=0;i<n;i++)
-    {
-        scanf("%d %d %d %d %d",&a,&b,&c,&d,&e); 
-        harvest(farm,crop,a,b,c,d);
-        plant(farm,a,b,c,d,e);
-    }
-    for (i=1;i<=m;i++) printf("%d\n",crop[i]);
-    for (i=0;i<h;i++)
-    {
-        for (j=0;j<w;j++)
-        if     (farm[i][j]==0) printf(".");
-        else    printf("%d",farm[i][j]);
-        printf("\n");
-    }
-    return 0;
-}
-
-
-
-==========================================================================================
 
 
 
