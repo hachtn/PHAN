@@ -1,10 +1,10 @@
 n,x,a,y,b = map(int, input().split())
 
-dp = [10000000] * (n + x+y)
+dp = [10000000] * (n + y)
 
 dp[0] = 0
 
-for i in range(2, n + x + y):
+for i in range(2, n + y):
     if i >= x:
         dp[i] = min(dp[i], dp[i - x] + a)
     if i >= y:
