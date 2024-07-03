@@ -18,7 +18,7 @@ void dfs(int v, int n) {
 int main() {
     int n, m;
     char str[1000];
-    fgets(str, sizeof(str),stdin); 
+    fgets(str, sizeof(str),file); 
     sscanf(str, "%d %d",&n,&m);
 
     // Khởi tạo ma trận kề
@@ -31,7 +31,7 @@ int main() {
     // Đọc các cạnh và cập nhật ma trận kề
     for (int i = 0; i < m; i++) {
         int a, b;
-         fgets(str, sizeof(str), stdin); 
+         fgets(str, sizeof(str), file); 
         sscanf(str, "%d %d",&a,&b);
         adj[a-1][b-1] = 1;
         adj[b-1][a-1] = 1;

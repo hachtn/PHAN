@@ -1,33 +1,40 @@
 #include <stdio.h>
-#include <string.h>
 
-int main(void)
-{
-    char s1[1000],s2[1000];
-    int i,n,length,count=0;
-    FILE* file = fopen("C:/Users/Admin/Desktop/Paiza/input.txt", "r");
-    if (file == NULL)
-    {
-        perror("Unable to open file");
-        return 1;
+#define MAX 100001
+int main(void){
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
+    char str[MAX];long i,A,B;int N;
+    int start[MAX]={0},end[MAX]={0};
+    long mind=100001;long maxd=0;
+    FILE* file = fopen("input.txt", "r");
+    fgets(str, sizeof(str),file);
+    sscanf(str,"%d",&N);
+    for (i=0;i<N;i++)
+     {
+      fgets(str, sizeof(str),file);
+      sscanf(str,"%ld %ld",&A,&B);    
+      start[A]++;end[B]++;
+      if (A<mind) mind=A;
+      if (B>maxd) maxd=B;
+     }
+    long worday = 0;
+    long maxday = 0;
+    long currentday = 0;
+
+    for (i = mind; i <= maxd;i++) {
+        worday += start[i];
+        if (worday > 0) {
+            currentday++;
+            if (currentday > maxday) {
+                maxday = currentday;
+            }
+        } else {
+            currentday = 0;
+        }
+        worday -= end[i];
     }
-   fscanf(file,"%d",&n);
-   fscanf(file,"%s",s1);
-   length=strlen(s1);
-   for (i=0;i<n-1;i++)
-    {
-        fscanf(file,"%s",s2);
-        if (s1[length-1]!=s2[0])
-         {
-         printf("%S %s",s1[length-1],s2[0]);
-         break;
-         }
-        else count++;
-        strcpy(s1,s2);
-        length=strlen(s1);
-    }
-    if (count==n-1)
-    printf("Yes");
-   fclose(file);
-   return 0;
+    fclose(file);
+    printf("%ld\n", maxday);
+    return 0;
 }

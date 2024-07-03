@@ -15,11 +15,11 @@ int main(void){
     char buf[1000];int seki[101];
     int a,b,n,m,count=0;
     refresh(seki);
-    fgets(buf, sizeof(buf), stdin);
+    fgets(buf, sizeof(buf), file);
     sscanf(buf, "%d %d\n",&n,&m);
     for (int i=0; i<m; i++) 
     {
-        fgets(buf, sizeof(buf), stdin);
+        fgets(buf, sizeof(buf), file);
         sscanf(buf,"%d %d\n",&a,&b);
         if (check(seki,a,b)==1)
          for (int j=b;j<=a+b-1;j++)  
@@ -44,12 +44,12 @@ int main(void){
     // Let's チャレンジ！！
     char str[1000];
     int g[MAX][MAX];int a,b,N,M;
-    fgets(str, sizeof(str), stdin); 
+    fgets(str, sizeof(str), file); 
     sscanf(str, "%d %d",&N,&M);
     memset(g,0,sizeof(g));
     for (int i=0;i<M;i++)
     {
-       fgets(str, sizeof(str), stdin); 
+       fgets(str, sizeof(str), file); 
        sscanf(str,"%d %d",&a,&b);
        g[a-1][b-1]=1;
     }
@@ -91,12 +91,12 @@ int main(void){
     // Let's チャレンジ！！
     char str[1000];
     map_g g[MAX][MAX];int a,b,N,M,k;
-    fgets(str, sizeof(str), stdin); 
+    fgets(str, sizeof(str), file); 
     sscanf(str, "%d %d",&N,&M);
     memset(g,0,sizeof(g));
     for (int i=0;i<M;i++)
     {
-       fgets(str, sizeof(str), stdin); 
+       fgets(str, sizeof(str), file); 
        sscanf(str,"%d %d %d",&a,&b,&k);
        g[a-1][b-1].potision=1;g[a-1][b-1].value=k;
     }
@@ -139,12 +139,12 @@ int main(void){
     // Let's チャレンジ！！
     char str[1000];
     map_g g[MAX];int N,t=1;
-    fgets(str, sizeof(str), stdin); 
+    fgets(str, sizeof(str), file); 
     sscanf(str, "%d",&N);
     memset(g,0,sizeof(g));
     for (int i=0;i<N-1;i++)
     {
-       fgets(str, sizeof(str), stdin); 
+       fgets(str, sizeof(str), file); 
        sscanf(str,"%d %d",&g[i].p1,&g[i].p2);
     }
        for (int i = 0; i < N; i++)

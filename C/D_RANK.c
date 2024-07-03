@@ -7,10 +7,10 @@ int main(void){
     char buf[1000];
     char token1[100], token2[100];
 
-    fgets(buf, sizeof(buf), stdin);
+    fgets(buf, sizeof(buf), file);
     sscanf(buf, "%d\n", &n);
     for (i=0; i<n; i++) {
-        fgets(buf, sizeof(buf), stdin);
+        fgets(buf, sizeof(buf), file);
         sscanf(buf, "%s %s\n", token1, token2);
         printf("hello = %s , world = %s\n" ,token1 ,token2);
     }
@@ -24,7 +24,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char s[1000],str[1000];
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%s",s);
     printf("%s",s);
     return 0;
@@ -40,7 +40,7 @@ int main(void){
     char str[1000];
     for (int i = 0; i < n; i++)
     {
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     printf("%s", str);
     }
     return 0;
@@ -52,7 +52,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000],s1[1000],s2[1000],s3[1000];
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%s %s %s",s1,s2,s3);
     printf("%s\n",s1);printf("%s\n",s2);printf("%s\n",s3);
     return 0;
@@ -66,9 +66,9 @@ int main(void) {
     // Let's チャレンジ！！
     char str[1000]; int n;
     const char delim[] = " ";
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str, "%d", &n);
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     char* token = strtok(str, delim);
     for (int i = 0; i < n; i++)
     {
@@ -86,7 +86,7 @@ int main(void) {
     // Let's チャレンジ！！
     char str[1000]; 
     const char delim[] = ",";
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     char* token = strtok(str, delim);
     while (token != NULL)
     {
@@ -105,9 +105,9 @@ int main(void) {
     // Let's チャレンジ！！
     char str[1000]; int n;
     const char delim[] = ",";
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str, "%d", &n);
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     char* token = strtok(str, delim);
     for (int i = 0; i < n; i++)
     {
@@ -123,7 +123,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int a,b,c;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d %d %d",&a,&b,&c);
     if ((a*b) <=c)  printf("YES\n");
     else            printf("NO\n");
@@ -137,7 +137,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int a;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&a);
     if (a==7)  printf("Yes");
     else       printf("No");
@@ -150,7 +150,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int i,n;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&n);
     for (i=1;i<=n;i++) printf("%d\n",i);
     return 0;
@@ -178,9 +178,9 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int a,b;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&a);
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&b);
     printf("%d",a*b);
     return 0;
@@ -193,7 +193,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int a,b;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d %d",&a,&b);
     printf("%d",a+b);
     return 0;
@@ -208,7 +208,7 @@ int main(void){
     char str[1000];int a,min=100;
     for (int i = 0; i < n; i++)
     {
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&a);
     if (a<min) min=a;
     }
@@ -226,8 +226,8 @@ int main(void) {
     // Let's チャレンジ！！
     char str[1000], c[1000];
     
-    fgets(str,sizeof(str), stdin);
-    fgets(c,sizeof(c), stdin);
+    fgets(str,sizeof(str), file);
+    fgets(c,sizeof(c), file);
      str[strcspn(str, "\n")] = '\0';
      c[strcspn(c, "\n")] = '\0';
    if (strcmp(str,c) == 0) {
@@ -248,9 +248,9 @@ int main(void) {
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000], c[1000];
-    fgets(str,sizeof(str), stdin);str[strcspn(str, "\n")] = '\0';
+    fgets(str,sizeof(str), file);str[strcspn(str, "\n")] = '\0';
     printf("%s@",str);
-    fgets(c,sizeof(c), stdin);str[strcspn(str, "\n")] = '\0';
+    fgets(c,sizeof(c), file);str[strcspn(str, "\n")] = '\0';
     printf("%s",c);
     return 0;
 }
@@ -263,7 +263,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int a;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&a);
     printf("%d",a-1);
     return 0;
@@ -276,7 +276,7 @@ int main(void){
     // 自分の得意な言語で
     // Let's チャレンジ！！
     char str[1000];int a;
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     sscanf(str,"%d",&a);
     printf("%d",a*12);
     return 0;
@@ -290,7 +290,7 @@ int main(void){
     char str[1000];int count=0;
     for (int i = 0; i < n; i++)
     {
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), file);
     if (str[0] =='R') count++;
     }
     if (count>3) printf("Yes");
