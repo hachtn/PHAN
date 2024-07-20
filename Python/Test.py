@@ -1,25 +1,29 @@
 with open('D:\\Documents\\GitHub\\PHAN\\Python\\test.txt', 'r') as f:
         data = f.read().strip().split()
 
-n = int(data[0])        
+N = int(data[0])
 
-a = []
+x = list(map(int,data[1:]))
 
-for i in range(1,n+1):
-       a.append(int(data[i]))
+max_high = 0
+max_low = 0
 
-index = n+1
+for i in range(N):
+    low  = 0
+    high = 0
+    for j in range(i+1,N):
+        if x[j] > x[j-1]:
+            high += 1
+            if high>max_high:
+                max_high = high
+        else:
+            break
+    for j in range(i+1,N):
+        if x[j] < x[j-1]:
+            low += 1
+            if low>max_low:
+                max_low = low
+        else:
+            break
 
-T = int(data[index])
-index+=1
-Q = int(data[index])
-
-for i in range(index+1,Q*2+index,2):
-        x = int(data[i])
-        y = int(data[i+1])
-        if T >= a[x-1]*y:
-                T = T - a[x-1]*y
-   
-print(T)                
-
-        
+print(max_low,max_high)
